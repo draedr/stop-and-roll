@@ -1,0 +1,16 @@
+{
+  "title": "Feline's Space",
+  "author": "felino-neptune",
+  "contacts": [
+    {
+      "name": "Mastodon",
+      "value": "@kettlevoid@koyu.space",
+      "link": "https://koyu.space/web/@kettlevoid"
+    },
+    {
+      "email": "Email",
+      "value": "manuel.tondelli@outlook.com",
+      "link": "mailto:manuel.tondelli@outlook.com"
+    }
+  ]
+}

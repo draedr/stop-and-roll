@@ -1,0 +1,61 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Nav from '../components/Nav.astro';
+
+const { content } = Astro.props;
+let canonicalURL = Astro.canonicalURL;
+---
+
+<html lang={content.lang || 'en'}>
+	<head>
+		<title>{content.title}</title>
+		<MainHead title={content.title} description={content.description} image={content.image} {canonicalURL} />
+		<style lang="scss">
+			.text {
+				padding-bottom: 6rem;
+
+				p {
+					font-size: 1.2em;
+					line-height: 2;
+					margin-top: 2em;
+					margin-bottom: 2em;
+				}
+			}
+
+			.hero {
+				display: block;
+				height: 16rem;
+				overflow: hidden;
+				margin: 4rem 0;
+
+				&-img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.title {
+				font-size: 3em;
+				letter-spacing: -0.04em;
+				margin-top: 2rem;
+				margin-bottom: 0;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<Nav />
+
+		<main class="wrapper">
+			<h2 class="title">{content.title}</h2>
+			<div class="hero">
+				<img class="hero-img" src={content.image} alt="" />
+			</div>
+			<article class="article">
+				<slot />
+			</article>
+		</main>
+	</body>
+</html>
